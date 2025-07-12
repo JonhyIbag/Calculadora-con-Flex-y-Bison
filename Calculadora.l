@@ -15,6 +15,13 @@ Simbolo [,%\+\-\*/\(\)\n]
 
 %%
 
+"aritmeticas"   { return INS_ARITMETICAS; }
+"trigonometricas"   { return INS_TRIGONOMETRICAS; }
+"logaritmos"    { return INS_LOGARITMOS; }
+"potencia"   { return INS_POTENCIA; }
+"raiz"     { return INS_RAIZ; }
+"absoluto"  { return INS_ABSOLUTO; }
+"constantes"    { return INS_CONSTANTES; }
 "sin"       { return SIN; }
 "cos"       { return COS; }
 "tan"       { return TAN; }
@@ -29,5 +36,5 @@ Simbolo [,%\+\-\*/\(\)\n]
 {Blanco}    ; // Ignora espacios en blanco
 {Numero}  { yylval.real = atof(yytext); return NUMERO; }
 {Simbolo}   { return yytext[0]; }
-.        { printf("Caracter no reconocido: %s\n", yytext); return -1; }
+.        {return INVALIDO; } // Cualquier otro caracter no válido;
 %%

@@ -66,7 +66,15 @@ extern int yydebug;
     TAN = 267,                     /* TAN  */
     PI = 268,                      /* PI  */
     EULER = 269,                   /* EULER  */
-    NEG = 270                      /* NEG  */
+    INS_ARITMETICAS = 270,         /* INS_ARITMETICAS  */
+    INS_TRIGONOMETRICAS = 271,     /* INS_TRIGONOMETRICAS  */
+    INS_LOGARITMOS = 272,          /* INS_LOGARITMOS  */
+    INS_POTENCIA = 273,            /* INS_POTENCIA  */
+    INS_RAIZ = 274,                /* INS_RAIZ  */
+    INS_ABSOLUTO = 275,            /* INS_ABSOLUTO  */
+    INS_CONSTANTES = 276,          /* INS_CONSTANTES  */
+    INVALIDO = 277,                /* INVALIDO  */
+    NEG = 278                      /* NEG  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -78,8 +86,9 @@ union YYSTYPE
 #line 11 "Calculadora.y"
 
     double real;
+    int entero;
 
-#line 83 "Calculadora.tab.h"
+#line 92 "Calculadora.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

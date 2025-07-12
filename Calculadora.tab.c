@@ -119,20 +119,30 @@ enum yysymbol_kind_t
   YYSYMBOL_TAN = 12,                       /* TAN  */
   YYSYMBOL_PI = 13,                        /* PI  */
   YYSYMBOL_EULER = 14,                     /* EULER  */
-  YYSYMBOL_15_ = 15,                       /* '+'  */
-  YYSYMBOL_16_ = 16,                       /* '-'  */
-  YYSYMBOL_17_ = 17,                       /* '*'  */
-  YYSYMBOL_18_ = 18,                       /* '/'  */
-  YYSYMBOL_19_ = 19,                       /* '%'  */
-  YYSYMBOL_NEG = 20,                       /* NEG  */
-  YYSYMBOL_21_n_ = 21,                     /* '\n'  */
-  YYSYMBOL_22_ = 22,                       /* '('  */
-  YYSYMBOL_23_ = 23,                       /* ')'  */
-  YYSYMBOL_24_ = 24,                       /* ','  */
-  YYSYMBOL_YYACCEPT = 25,                  /* $accept  */
-  YYSYMBOL_linea = 26,                     /* linea  */
-  YYSYMBOL_exp = 27,                       /* exp  */
-  YYSYMBOL_exp_real = 28                   /* exp_real  */
+  YYSYMBOL_INS_ARITMETICAS = 15,           /* INS_ARITMETICAS  */
+  YYSYMBOL_INS_TRIGONOMETRICAS = 16,       /* INS_TRIGONOMETRICAS  */
+  YYSYMBOL_INS_LOGARITMOS = 17,            /* INS_LOGARITMOS  */
+  YYSYMBOL_INS_POTENCIA = 18,              /* INS_POTENCIA  */
+  YYSYMBOL_INS_RAIZ = 19,                  /* INS_RAIZ  */
+  YYSYMBOL_INS_ABSOLUTO = 20,              /* INS_ABSOLUTO  */
+  YYSYMBOL_INS_CONSTANTES = 21,            /* INS_CONSTANTES  */
+  YYSYMBOL_INVALIDO = 22,                  /* INVALIDO  */
+  YYSYMBOL_23_ = 23,                       /* '+'  */
+  YYSYMBOL_24_ = 24,                       /* '-'  */
+  YYSYMBOL_25_ = 25,                       /* '*'  */
+  YYSYMBOL_26_ = 26,                       /* '/'  */
+  YYSYMBOL_27_ = 27,                       /* '%'  */
+  YYSYMBOL_NEG = 28,                       /* NEG  */
+  YYSYMBOL_29_n_ = 29,                     /* '\n'  */
+  YYSYMBOL_30_ = 30,                       /* '('  */
+  YYSYMBOL_31_ = 31,                       /* ')'  */
+  YYSYMBOL_32_ = 32,                       /* ','  */
+  YYSYMBOL_YYACCEPT = 33,                  /* $accept  */
+  YYSYMBOL_linea = 34,                     /* linea  */
+  YYSYMBOL_exp = 35,                       /* exp  */
+  YYSYMBOL_exp_real = 36,                  /* exp_real  */
+  YYSYMBOL_errores_sintacticos = 37,       /* errores_sintacticos  */
+  YYSYMBOL_informacion = 38                /* informacion  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -458,21 +468,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  2
+#define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   152
+#define YYLAST   315
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  25
+#define YYNTOKENS  33
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  4
+#define YYNNTS  6
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  23
+#define YYNRULES  45
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  60
+#define YYNSTATES  99
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   270
+#define YYMAXUTOK   278
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -487,10 +497,10 @@ union yyalloc
 static const yytype_int8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-      21,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+      29,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,    19,     2,     2,
-      22,    23,    17,    15,    24,    16,     2,    18,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,    27,     2,     2,
+      30,    31,    25,    23,    32,    24,     2,    26,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -513,16 +523,18 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      20
+      15,    16,    17,    18,    19,    20,    21,    22,    28
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
-static const yytype_int8 yyrline[] =
+static const yytype_uint8 yyrline[] =
 {
-       0,    34,    34,    35,    38,    39,    43,    44,    45,    47,
-      48,    49,    50,    54,    56,    58,    59,    60,    62,    63,
-      65,    67,    68,    69
+       0,    38,    38,    39,    40,    44,    48,    49,    50,    54,
+      55,    56,    58,    59,    60,    61,    69,    71,    73,    74,
+      75,    77,    85,    87,    89,    97,    98,   104,   105,   106,
+     107,   108,   109,   110,   111,   112,   113,   114,   115,   118,
+     126,   134,   140,   145,   150,   155
 };
 #endif
 
@@ -540,8 +552,11 @@ static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "EXIT", "NUMERO",
   "LOG", "LN", "ABS", "SQRT", "POW", "SIN", "COS", "TAN", "PI", "EULER",
+  "INS_ARITMETICAS", "INS_TRIGONOMETRICAS", "INS_LOGARITMOS",
+  "INS_POTENCIA", "INS_RAIZ", "INS_ABSOLUTO", "INS_CONSTANTES", "INVALIDO",
   "'+'", "'-'", "'*'", "'/'", "'%'", "NEG", "'\\n'", "'('", "')'", "','",
-  "$accept", "linea", "exp", "exp_real", YY_NULLPTR
+  "$accept", "linea", "exp", "exp_real", "errores_sintacticos",
+  "informacion", YY_NULLPTR
 };
 
 static const char *
@@ -551,12 +566,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-20)
+#define YYPACT_NINF (-14)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-1)
+#define YYTABLE_NINF (-3)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -565,12 +580,16 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-     -20,    21,   -20,   -19,   -20,   -18,     0,     1,    14,    16,
-      18,    19,    20,   -20,   -20,    40,    40,    34,   133,   -20,
-      40,    40,    40,    40,    40,    40,    40,    40,   -20,    52,
-     -20,    40,    40,    40,    40,    40,    61,    70,    79,    88,
-      42,    97,   106,   115,   -20,    -4,    -4,   -16,   -16,   -20,
-     -20,   -20,   -20,   -20,    40,   -20,   -20,   -20,   124,   -20
+      77,    -9,   105,   -14,   -14,    -4,   -14,     7,     8,     9,
+      10,    20,    21,    27,    31,   -14,   -14,   -14,   -14,   -14,
+     -14,   -14,   -14,   -14,    -3,    -3,    -1,   107,   -14,   -14,
+     -14,    -3,    -3,    -3,    -3,    -3,    -3,    -3,    -3,   -14,
+      22,   -14,   132,   159,   186,   213,    -3,   221,   230,   239,
+     248,    -8,   257,   266,   275,    -3,    -3,    -3,    -3,   -14,
+      -3,    -3,    -3,   -13,    -3,    -3,    -3,   -13,    -3,    -3,
+      -3,    25,    -3,    -3,    -3,    25,   -14,   -14,   -14,   -14,
+     -14,    -3,   -14,   -14,   -14,   124,   124,   124,   124,   124,
+     124,   124,   124,   124,   124,   124,   124,   284,   -14
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -578,24 +597,28 @@ static const yytype_int16 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       2,     0,     1,     0,     6,     0,     0,     0,     0,     0,
-       0,     0,     0,     7,     8,     0,     0,     0,     4,     5,
-       0,     0,     0,     0,     0,     0,     0,     0,    23,     0,
-       3,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,    14,     9,    10,    11,    12,    13,
-      21,    22,    20,    18,     0,    15,    16,    17,     0,    19
+       0,     0,     0,     4,     1,     0,     9,     0,     0,     0,
+       0,     0,     0,     0,     0,    10,    11,    39,    40,    41,
+      42,    43,    44,    45,     0,     0,     0,     5,     6,     7,
+       8,     0,     0,     0,     0,     0,     0,     0,     0,    26,
+       0,     3,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,    17,
+       0,     0,     0,    12,     0,     0,     0,    13,     0,     0,
+       0,    14,     0,     0,     0,    15,    16,    24,    25,    23,
+      21,     0,    18,    19,    20,    29,    27,    28,    30,    31,
+      32,    36,    37,    38,    33,    34,    35,     0,    22
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -20,   -20,   -20,   -15
+     -14,   -14,   -14,    -2,   -14,   -14
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     1,    17,    18
+       0,     2,    26,    63,    28,    29
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -603,70 +626,110 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      28,    29,    19,    35,    20,    36,    37,    38,    39,    40,
-      41,    42,    43,    33,    34,    35,    45,    46,    47,    48,
-      49,     2,    21,    22,     3,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,    14,    23,    15,    24,    58,
-      25,    26,    27,    16,     4,     5,     6,     7,     8,     9,
-      10,    11,    12,    13,    14,    30,    15,    31,    32,    33,
-      34,    35,    16,     0,     0,     0,    54,    31,    32,    33,
-      34,    35,     0,     0,     0,    44,    31,    32,    33,    34,
-      35,     0,     0,     0,    50,    31,    32,    33,    34,    35,
-       0,     0,     0,    51,    31,    32,    33,    34,    35,     0,
-       0,     0,    52,    31,    32,    33,    34,    35,     0,     0,
-       0,    53,    31,    32,    33,    34,    35,     0,     0,     0,
-      55,    31,    32,    33,    34,    35,     0,     0,     0,    56,
-      31,    32,    33,    34,    35,     0,     0,     0,    57,    31,
-      32,    33,    34,    35,     0,     0,     0,    59,    31,    32,
-      33,    34,    35
+      27,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    57,    58,    46,    55,    56,    57,    58,    46,
+       3,    24,    39,    40,    81,    30,     0,    25,    41,    47,
+      48,    49,    50,    51,    52,    53,    54,    31,    32,    33,
+      34,    67,    71,    75,    76,    55,    56,    57,    58,    46,
+      35,    36,    46,    59,    67,    71,    75,    37,    85,    86,
+      87,    38,    88,    89,    90,     0,    91,    92,    93,     0,
+      94,    95,    96,     0,     0,     0,     0,    -2,     1,    97,
+      -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,
+      -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,     0,
+       0,    -2,     0,     0,     0,     4,     0,    -2,     5,     6,
+       7,     8,     9,    10,    11,    12,    13,    14,    15,    16,
+      17,    18,    19,    20,    21,    22,    23,     0,     0,    24,
+      42,    43,    44,    45,    46,    25,     6,     7,     8,     9,
+      10,    11,    12,    13,    14,    15,    16,    55,    56,    57,
+      58,    46,     0,     0,     0,    60,    24,    61,    62,     0,
+       0,     0,    25,     6,     7,     8,     9,    10,    11,    12,
+      13,    14,    15,    16,     0,     0,     0,     0,     0,     0,
+       0,     0,    64,    24,    65,    66,     0,     0,     0,    25,
+       6,     7,     8,     9,    10,    11,    12,    13,    14,    15,
+      16,     0,     0,     0,     0,     0,     0,     0,     0,    68,
+      24,    69,    70,     0,     0,     0,    25,     6,     7,     8,
+       9,    10,    11,    12,    13,    14,    15,    16,     0,     0,
+       0,     0,     0,     0,     0,     0,    72,    24,    73,    74,
+       0,     0,     0,    25,    55,    56,    57,    58,    46,     0,
+       0,     0,    77,    55,    56,    57,    58,    46,     0,     0,
+       0,    78,    55,    56,    57,    58,    46,     0,     0,     0,
+      79,    55,    56,    57,    58,    46,     0,     0,     0,    80,
+      55,    56,    57,    58,    46,     0,     0,     0,    82,    55,
+      56,    57,    58,    46,     0,     0,     0,    83,    55,    56,
+      57,    58,    46,     0,     0,     0,    84,    55,    56,    57,
+      58,    46,     0,     0,     0,    98
 };
 
 static const yytype_int8 yycheck[] =
 {
-      15,    16,    21,    19,    22,    20,    21,    22,    23,    24,
-      25,    26,    27,    17,    18,    19,    31,    32,    33,    34,
-      35,     0,    22,    22,     3,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,    14,    22,    16,    22,    54,
-      22,    22,    22,    22,     4,     5,     6,     7,     8,     9,
-      10,    11,    12,    13,    14,    21,    16,    15,    16,    17,
-      18,    19,    22,    -1,    -1,    -1,    24,    15,    16,    17,
-      18,    19,    -1,    -1,    -1,    23,    15,    16,    17,    18,
-      19,    -1,    -1,    -1,    23,    15,    16,    17,    18,    19,
-      -1,    -1,    -1,    23,    15,    16,    17,    18,    19,    -1,
-      -1,    -1,    23,    15,    16,    17,    18,    19,    -1,    -1,
-      -1,    23,    15,    16,    17,    18,    19,    -1,    -1,    -1,
-      23,    15,    16,    17,    18,    19,    -1,    -1,    -1,    23,
-      15,    16,    17,    18,    19,    -1,    -1,    -1,    23,    15,
-      16,    17,    18,    19,    -1,    -1,    -1,    23,    15,    16,
-      17,    18,    19
+       2,     4,     5,     6,     7,     8,     9,    10,    11,    12,
+      13,    14,    25,    26,    27,    23,    24,    25,    26,    27,
+      29,    24,    24,    25,    32,    29,    -1,    30,    29,    31,
+      32,    33,    34,    35,    36,    37,    38,    30,    30,    30,
+      30,    43,    44,    45,    46,    23,    24,    25,    26,    27,
+      30,    30,    27,    31,    56,    57,    58,    30,    60,    61,
+      62,    30,    64,    65,    66,    -1,    68,    69,    70,    -1,
+      72,    73,    74,    -1,    -1,    -1,    -1,     0,     1,    81,
+       3,     4,     5,     6,     7,     8,     9,    10,    11,    12,
+      13,    14,    15,    16,    17,    18,    19,    20,    21,    -1,
+      -1,    24,    -1,    -1,    -1,     0,    -1,    30,     3,     4,
+       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    17,    18,    19,    20,    21,    -1,    -1,    24,
+      23,    24,    25,    26,    27,    30,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    13,    14,    23,    24,    25,
+      26,    27,    -1,    -1,    -1,    23,    24,    25,    26,    -1,
+      -1,    -1,    30,     4,     5,     6,     7,     8,     9,    10,
+      11,    12,    13,    14,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,    -1,    23,    24,    25,    26,    -1,    -1,    -1,    30,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    13,
+      14,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    23,
+      24,    25,    26,    -1,    -1,    -1,    30,     4,     5,     6,
+       7,     8,     9,    10,    11,    12,    13,    14,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    -1,    23,    24,    25,    26,
+      -1,    -1,    -1,    30,    23,    24,    25,    26,    27,    -1,
+      -1,    -1,    31,    23,    24,    25,    26,    27,    -1,    -1,
+      -1,    31,    23,    24,    25,    26,    27,    -1,    -1,    -1,
+      31,    23,    24,    25,    26,    27,    -1,    -1,    -1,    31,
+      23,    24,    25,    26,    27,    -1,    -1,    -1,    31,    23,
+      24,    25,    26,    27,    -1,    -1,    -1,    31,    23,    24,
+      25,    26,    27,    -1,    -1,    -1,    31,    23,    24,    25,
+      26,    27,    -1,    -1,    -1,    31
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,    26,     0,     3,     4,     5,     6,     7,     8,     9,
-      10,    11,    12,    13,    14,    16,    22,    27,    28,    21,
-      22,    22,    22,    22,    22,    22,    22,    22,    28,    28,
-      21,    15,    16,    17,    18,    19,    28,    28,    28,    28,
-      28,    28,    28,    28,    23,    28,    28,    28,    28,    28,
-      23,    23,    23,    23,    24,    23,    23,    23,    28,    23
+       0,     1,    34,    29,     0,     3,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    13,    14,    15,    16,    17,
+      18,    19,    20,    21,    24,    30,    35,    36,    37,    38,
+      29,    30,    30,    30,    30,    30,    30,    30,    30,    36,
+      36,    29,    23,    24,    25,    26,    27,    36,    36,    36,
+      36,    36,    36,    36,    36,    23,    24,    25,    26,    31,
+      23,    25,    26,    36,    23,    25,    26,    36,    23,    25,
+      26,    36,    23,    25,    26,    36,    36,    31,    31,    31,
+      31,    32,    31,    31,    31,    36,    36,    36,    36,    36,
+      36,    36,    36,    36,    36,    36,    36,    36,    31
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    25,    26,    26,    27,    27,    28,    28,    28,    28,
-      28,    28,    28,    28,    28,    28,    28,    28,    28,    28,
-      28,    28,    28,    28
+       0,    33,    34,    34,    34,    35,    35,    35,    35,    36,
+      36,    36,    36,    36,    36,    36,    36,    36,    36,    36,
+      36,    36,    36,    36,    36,    36,    36,    37,    37,    37,
+      37,    37,    37,    37,    37,    37,    37,    37,    37,    38,
+      38,    38,    38,    38,    38,    38
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     0,     3,     1,     2,     1,     1,     1,     3,
-       3,     3,     3,     3,     3,     4,     4,     4,     4,     6,
-       4,     4,     4,     2
+       0,     2,     0,     3,     2,     1,     1,     1,     2,     1,
+       1,     1,     3,     3,     3,     3,     3,     3,     4,     4,
+       4,     4,     6,     4,     4,     4,     2,     4,     4,     4,
+       4,     4,     4,     4,     4,     4,     4,     4,     4,     1,
+       1,     1,     1,     1,     1,     1
 };
 
 
@@ -1130,136 +1193,312 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* linea: linea exp '\n'  */
-#line 35 "Calculadora.y"
-                         {}
-#line 1136 "Calculadora.tab.c"
-    break;
-
-  case 4: /* exp: exp_real  */
-#line 38 "Calculadora.y"
-                 {printf("%f\n\n", (yyvsp[0].real));}
-#line 1142 "Calculadora.tab.c"
-    break;
-
-  case 5: /* exp: EXIT '\n'  */
 #line 39 "Calculadora.y"
-                    {printf("Gracias por utilizar el programa <3"); exit(0);}
-#line 1148 "Calculadora.tab.c"
-    break;
-
-  case 6: /* exp_real: NUMERO  */
-#line 43 "Calculadora.y"
-                   {(yyval.real) = (yyvsp[0].real);}
-#line 1154 "Calculadora.tab.c"
-    break;
-
-  case 7: /* exp_real: PI  */
-#line 44 "Calculadora.y"
-                 {(yyval.real) = M_PI;}
-#line 1160 "Calculadora.tab.c"
-    break;
-
-  case 8: /* exp_real: EULER  */
-#line 45 "Calculadora.y"
-                    {(yyval.real) = M_E;}
-#line 1166 "Calculadora.tab.c"
-    break;
-
-  case 9: /* exp_real: exp_real '+' exp_real  */
-#line 47 "Calculadora.y"
-                                    {(yyval.real) = (yyvsp[-2].real) + (yyvsp[0].real);}
-#line 1172 "Calculadora.tab.c"
-    break;
-
-  case 10: /* exp_real: exp_real '-' exp_real  */
-#line 48 "Calculadora.y"
-                                    {(yyval.real) = (yyvsp[-2].real) - (yyvsp[0].real);}
-#line 1178 "Calculadora.tab.c"
-    break;
-
-  case 11: /* exp_real: exp_real '*' exp_real  */
-#line 49 "Calculadora.y"
-                                    {(yyval.real) = (yyvsp[-2].real) * (yyvsp[0].real);}
-#line 1184 "Calculadora.tab.c"
-    break;
-
-  case 12: /* exp_real: exp_real '/' exp_real  */
-#line 50 "Calculadora.y"
-                                    {
-                if((yyvsp[0].real)) (yyval.real) = (yyvsp[-2].real) / (yyvsp[0].real);
-                else (yyval.real)=(yyvsp[-2].real); // Manejo de división por cero
-                }
-#line 1193 "Calculadora.tab.c"
-    break;
-
-  case 13: /* exp_real: exp_real '%' exp_real  */
-#line 54 "Calculadora.y"
-                                    {(yyval.real) = (int)(yyvsp[-2].real) % (int)(yyvsp[0].real);}
+                     {}
 #line 1199 "Calculadora.tab.c"
     break;
 
-  case 14: /* exp_real: '(' exp_real ')'  */
-#line 56 "Calculadora.y"
-                              {(yyval.real) = (yyvsp[-1].real);}
+  case 4: /* linea: error '\n'  */
+#line 40 "Calculadora.y"
+                      { printf("Error: Entrada invalida. Intentalo de nuevo.\n\n"); yyerrok; }
 #line 1205 "Calculadora.tab.c"
     break;
 
-  case 15: /* exp_real: SIN '(' exp_real ')'  */
+  case 5: /* exp: exp_real  */
+#line 44 "Calculadora.y"
+             {
+        if (!isnan((yyvsp[0].real))) // Verifica si el resultado no es NaN (Not A Number)
+            printf("%f\n\n", (yyvsp[0].real));
+    }
+#line 1214 "Calculadora.tab.c"
+    break;
+
+  case 8: /* exp: EXIT '\n'  */
+#line 50 "Calculadora.y"
+                {printf("Gracias por utilizar el programa <3"); exit(0);}
+#line 1220 "Calculadora.tab.c"
+    break;
+
+  case 9: /* exp_real: NUMERO  */
+#line 54 "Calculadora.y"
+           {(yyval.real) = (yyvsp[0].real);}
+#line 1226 "Calculadora.tab.c"
+    break;
+
+  case 10: /* exp_real: PI  */
+#line 55 "Calculadora.y"
+         {(yyval.real) = M_PI;}
+#line 1232 "Calculadora.tab.c"
+    break;
+
+  case 11: /* exp_real: EULER  */
+#line 56 "Calculadora.y"
+            {(yyval.real) = M_E;}
+#line 1238 "Calculadora.tab.c"
+    break;
+
+  case 12: /* exp_real: exp_real '+' exp_real  */
 #line 58 "Calculadora.y"
-                                  {(yyval.real) = sin((yyvsp[-1].real));}
-#line 1211 "Calculadora.tab.c"
+                            {(yyval.real) = (yyvsp[-2].real) + (yyvsp[0].real);}
+#line 1244 "Calculadora.tab.c"
     break;
 
-  case 16: /* exp_real: COS '(' exp_real ')'  */
+  case 13: /* exp_real: exp_real '-' exp_real  */
 #line 59 "Calculadora.y"
-                                   {(yyval.real) = cos((yyvsp[-1].real));}
-#line 1217 "Calculadora.tab.c"
+                            {(yyval.real) = (yyvsp[-2].real) - (yyvsp[0].real);}
+#line 1250 "Calculadora.tab.c"
     break;
 
-  case 17: /* exp_real: TAN '(' exp_real ')'  */
+  case 14: /* exp_real: exp_real '*' exp_real  */
 #line 60 "Calculadora.y"
-                                   {(yyval.real) = tan((yyvsp[-1].real));}
-#line 1223 "Calculadora.tab.c"
+                            {(yyval.real) = (yyvsp[-2].real) * (yyvsp[0].real);}
+#line 1256 "Calculadora.tab.c"
     break;
 
-  case 18: /* exp_real: SQRT '(' exp_real ')'  */
-#line 62 "Calculadora.y"
-                                    {(yyval.real) = sqrt((yyvsp[-1].real));}
-#line 1229 "Calculadora.tab.c"
+  case 15: /* exp_real: exp_real '/' exp_real  */
+#line 61 "Calculadora.y"
+                            {
+        if((yyvsp[0].real)>0) 
+            (yyval.real) = (yyvsp[-2].real) / (yyvsp[0].real);
+        else{
+            printf("Error semantico: No puede realizar una division sobre 0.\n\n");
+            (yyval.real) = NAN;
+        }
+    }
+#line 1269 "Calculadora.tab.c"
     break;
 
-  case 19: /* exp_real: POW '(' exp_real ',' exp_real ')'  */
-#line 63 "Calculadora.y"
-                                               {(yyval.real) = pow((int)(yyvsp[-3].real), (int)(yyvsp[-1].real));}
-#line 1235 "Calculadora.tab.c"
-    break;
-
-  case 20: /* exp_real: ABS '(' exp_real ')'  */
-#line 65 "Calculadora.y"
-                                   {(yyval.real) = fabs((yyvsp[-1].real));}
-#line 1241 "Calculadora.tab.c"
-    break;
-
-  case 21: /* exp_real: LOG '(' exp_real ')'  */
-#line 67 "Calculadora.y"
-                                   {(yyval.real) = log10((yyvsp[-1].real));}
-#line 1247 "Calculadora.tab.c"
-    break;
-
-  case 22: /* exp_real: LN '(' exp_real ')'  */
-#line 68 "Calculadora.y"
-                                  {(yyval.real) = log((yyvsp[-1].real));}
-#line 1253 "Calculadora.tab.c"
-    break;
-
-  case 23: /* exp_real: '-' exp_real  */
+  case 16: /* exp_real: exp_real '%' exp_real  */
 #line 69 "Calculadora.y"
-                                     {(yyval.real) = -(yyvsp[0].real);}
-#line 1259 "Calculadora.tab.c"
+                            {(yyval.real) = (int)(yyvsp[-2].real) % (int)(yyvsp[0].real);}
+#line 1275 "Calculadora.tab.c"
+    break;
+
+  case 17: /* exp_real: '(' exp_real ')'  */
+#line 71 "Calculadora.y"
+                      {(yyval.real) = (yyvsp[-1].real);}
+#line 1281 "Calculadora.tab.c"
+    break;
+
+  case 18: /* exp_real: SIN '(' exp_real ')'  */
+#line 73 "Calculadora.y"
+                           {(yyval.real) = sin((yyvsp[-1].real));}
+#line 1287 "Calculadora.tab.c"
+    break;
+
+  case 19: /* exp_real: COS '(' exp_real ')'  */
+#line 74 "Calculadora.y"
+                           {(yyval.real) = cos((yyvsp[-1].real));}
+#line 1293 "Calculadora.tab.c"
+    break;
+
+  case 20: /* exp_real: TAN '(' exp_real ')'  */
+#line 75 "Calculadora.y"
+                           {(yyval.real) = tan((yyvsp[-1].real));}
+#line 1299 "Calculadora.tab.c"
+    break;
+
+  case 21: /* exp_real: SQRT '(' exp_real ')'  */
+#line 77 "Calculadora.y"
+                            {
+        if((yyvsp[-1].real)>=0) 
+            (yyval.real) = log10((yyvsp[-1].real));
+        else {
+            printf("Error semantico: El logaritmo de un negativo no esta definido.\n\n");
+            (yyval.real) = NAN;
+        }
+    }
+#line 1312 "Calculadora.tab.c"
+    break;
+
+  case 22: /* exp_real: POW '(' exp_real ',' exp_real ')'  */
+#line 85 "Calculadora.y"
+                                       {(yyval.real) = pow((int)(yyvsp[-3].real), (int)(yyvsp[-1].real));}
+#line 1318 "Calculadora.tab.c"
+    break;
+
+  case 23: /* exp_real: ABS '(' exp_real ')'  */
+#line 87 "Calculadora.y"
+                           {(yyval.real) = fabs((yyvsp[-1].real));}
+#line 1324 "Calculadora.tab.c"
+    break;
+
+  case 24: /* exp_real: LOG '(' exp_real ')'  */
+#line 89 "Calculadora.y"
+                           {
+        if((yyvsp[-1].real)>=0) 
+            (yyval.real) = log10((yyvsp[-1].real));
+        else {
+            printf("Error semantico: El logaritmo de un negativo no esta definido.\n\n");
+            (yyval.real) = NAN;
+        }
+    }
+#line 1337 "Calculadora.tab.c"
+    break;
+
+  case 25: /* exp_real: LN '(' exp_real ')'  */
+#line 97 "Calculadora.y"
+                          {(yyval.real) = log((yyvsp[-1].real));}
+#line 1343 "Calculadora.tab.c"
+    break;
+
+  case 26: /* exp_real: '-' exp_real  */
+#line 98 "Calculadora.y"
+                             {(yyval.real) = -(yyvsp[0].real);}
+#line 1349 "Calculadora.tab.c"
+    break;
+
+  case 27: /* errores_sintacticos: exp_real '+' '*' exp_real  */
+#line 104 "Calculadora.y"
+                             {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1355 "Calculadora.tab.c"
+    break;
+
+  case 28: /* errores_sintacticos: exp_real '+' '/' exp_real  */
+#line 105 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1361 "Calculadora.tab.c"
+    break;
+
+  case 29: /* errores_sintacticos: exp_real '+' '+' exp_real  */
+#line 106 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1367 "Calculadora.tab.c"
+    break;
+
+  case 30: /* errores_sintacticos: exp_real '-' '+' exp_real  */
+#line 107 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1373 "Calculadora.tab.c"
+    break;
+
+  case 31: /* errores_sintacticos: exp_real '-' '*' exp_real  */
+#line 108 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1379 "Calculadora.tab.c"
+    break;
+
+  case 32: /* errores_sintacticos: exp_real '-' '/' exp_real  */
+#line 109 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1385 "Calculadora.tab.c"
+    break;
+
+  case 33: /* errores_sintacticos: exp_real '/' '+' exp_real  */
+#line 110 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1391 "Calculadora.tab.c"
+    break;
+
+  case 34: /* errores_sintacticos: exp_real '/' '*' exp_real  */
+#line 111 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1397 "Calculadora.tab.c"
+    break;
+
+  case 35: /* errores_sintacticos: exp_real '/' '/' exp_real  */
+#line 112 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1403 "Calculadora.tab.c"
+    break;
+
+  case 36: /* errores_sintacticos: exp_real '*' '+' exp_real  */
+#line 113 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1409 "Calculadora.tab.c"
+    break;
+
+  case 37: /* errores_sintacticos: exp_real '*' '*' exp_real  */
+#line 114 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1415 "Calculadora.tab.c"
+    break;
+
+  case 38: /* errores_sintacticos: exp_real '*' '/' exp_real  */
+#line 115 "Calculadora.y"
+                              {printf("Error de sintaxis: no puede colocar 2 operaciones juntas.\n\n");}
+#line 1421 "Calculadora.tab.c"
+    break;
+
+  case 39: /* informacion: INS_ARITMETICAS  */
+#line 118 "Calculadora.y"
+                   {
+        printf("Operaciones aritmeticas disponibles:\n"
+            "1. Suma: a + b\n"
+            "2. Resta: a - b\n"
+            "3. Multiplicacion: a * b\n"
+            "4. Division: a / b (no se permite división por cero)\n"
+            "5. Modulo: a %% b\n\n");
+    }
+#line 1434 "Calculadora.tab.c"
+    break;
+
+  case 40: /* informacion: INS_TRIGONOMETRICAS  */
+#line 126 "Calculadora.y"
+                         {
+        printf("Operaciones trigonometricas disponibles:\n"
+            "1. Seno: sin(a)\n"
+            "2. Coseno: cos(a)\n"
+            "3. Tangente: tan(a)\n\n"
+            "**Nota1: los angulos deben estar en radianes.\n"
+            "**Nota2: \"a\" puede representar cualquier operacion aritmetica valida.\n\n");
+    }
+#line 1447 "Calculadora.tab.c"
+    break;
+
+  case 41: /* informacion: INS_LOGARITMOS  */
+#line 134 "Calculadora.y"
+                    {
+        printf("Operaciones logaritmicas disponibles:\n"
+            "1. Logaritmo base 10: log(a) con a >= 0\n"
+            "2. Logaritmo natural: ln(a)\n"
+            "**Nota: \"a\" puede representar cualquier operacion aritmetica valida.\n\n");
+    }
+#line 1458 "Calculadora.tab.c"
+    break;
+
+  case 42: /* informacion: INS_POTENCIA  */
+#line 140 "Calculadora.y"
+                  {
+        printf("Operacion de potencia disponible:\n"
+            "1. Potencia: pow(a, b) donde a es la base y b es el exponente.\n"
+            "**Nota: \"a\" y \"b\" pueden representar cualquier operacion aritmetica valida.\n\n");
+    }
+#line 1468 "Calculadora.tab.c"
+    break;
+
+  case 43: /* informacion: INS_RAIZ  */
+#line 145 "Calculadora.y"
+              {
+        printf("Operacion de raiz cuadrada disponible:\n"
+            "1. Raíz cuadrada: sqrt(a) con a >= 0.\n"
+            "**Nota: \"a\" puede representar cualquier operacion aritmetica valida.\n\n");
+    }
+#line 1478 "Calculadora.tab.c"
+    break;
+
+  case 44: /* informacion: INS_ABSOLUTO  */
+#line 150 "Calculadora.y"
+                  {
+        printf("Operacion de valor absoluto disponible:\n"
+            "1. Valor absoluto: abs(a) donde a puede ser cualquier número real.\n"
+            "**Nota: \"a\" puede representar cualquier operacion aritmetica valida.\n\n");
+    }
+#line 1488 "Calculadora.tab.c"
+    break;
+
+  case 45: /* informacion: INS_CONSTANTES  */
+#line 155 "Calculadora.y"
+                    {
+        printf("Constantes matematicas disponibles:\n"
+            "1. pi: Representa el valor de pi (3.14159...)\n"
+            "2. e: Representa la constante de euler (2.71828...)\n\n");
+    }
+#line 1498 "Calculadora.tab.c"
     break;
 
 
-#line 1263 "Calculadora.tab.c"
+#line 1502 "Calculadora.tab.c"
 
       default: break;
     }
@@ -1452,17 +1691,25 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 72 "Calculadora.y"
+#line 161 "Calculadora.y"
 
 
 int main()
 {
-    printf("Calculadora cientifica (CTRL+C para salir)\n");
+    printf("**************Ingrese el comando de la izquierda para obtener la ayuda correspondiente**************\n\n"
+        "\taritmeticas\t\tMuestra las operaciones aritmeticas disponibles\n"
+        "\ttrigonometricas\t\tMuestra las operaciones trigonometricas disponibles\n"
+        "\tlogaritmos\t\tMuestra las operaciones logaritmicas disponibles\n"
+        "\tpotencia\t\tMuestra la sintaxis para elevar un nuemero a cierta potencia\n"
+        "\traiz\t\t\tMuestra la sintaxis para obtener la raiz cuadrada de un numero\n"
+        "\tabsoluto\t\tMuestra la sintaxis para obtener el valor absoluto de un numero\n"
+        "\tconstantes\t\tMuestra las constantes matematicas disponibles\n"
+        "\texit\t\t\tSalir del programa\n\n");
     yyparse();
     return 0;
 }
 
 void yyerror(const char *s)
 {
-    fprintf(stderr, "Error: %s\n", s);
+    //fprintf(stderr, "Error: %s\n", s);
 }

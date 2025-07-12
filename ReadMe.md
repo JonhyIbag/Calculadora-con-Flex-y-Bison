@@ -36,7 +36,7 @@ En este archivo debemos colocar las reglas que seguirá nuestro analizador léxi
 ### Declaraciones del Archivo .l
 Una vez que definimos las operaciones que necesitamos implementar, debemos crear nuestro analizador léxico con ayuda de Flex. Este analizador nos permite identificar cada una de las cadenas que serán aceptadas por el programa.
 
-![Decalaraciones del archivo .l](Imagenes\DeclaracionesArchivoFlex.png)
+![Decalaraciones del archivo .l](Imagenes/DeclaracionesArchivoFlex.png)
 
 En la imágen podemos observar las siguientes declaraciones:
 - Blanco: Nos sirve para identificar los espacios en blanco y tabulaciones.
@@ -44,7 +44,7 @@ En la imágen podemos observar las siguientes declaraciones:
 - Símbolo: Nos permite identificar los símbolos necesarios para realizar las operaciones aritméticas, así como paréntesis, comas y saltos de línea.
 
 ### Reglas del Archivo .l
-![Reglas del archivo .l](Imagenes\ReglasArchivoFlex.png)
+![Reglas del archivo .l](Imagenes/ReglasArchivoFlex.png)
 
 En la imagen podemos observar las reglas del analizador léxico. Cada regla tiene una expresión regular (izquierda) y una acción (derecha). Los valores de retorno en mayúsculas son importantes, ya que deben coincidir con los declarados en el archivo .y.
 Podemos agrupar estas reglas en tres grupos principales:
@@ -60,7 +60,7 @@ Podemos agrupar estas reglas en tres grupos principales:
 Este archivo contiene la gramática libre de contexto que controla el funcionamiento de la calculadora.
 
 ### Declaraciones del Archivo .y
-![Decalaraciones del archivo .y](Imagenes\DeclaracionesArchivoBison.png)
+![Decalaraciones del archivo .y](Imagenes/DeclaracionesArchivoBison.png)
 
 En la imagen podemos ver varios tipos de declaraciones:
 - %union: Permite declarar varios tipos de tokens en un solo apartado. Estos tipos son utilizados para especificar el tipo de variable que puede aceptar algun otro token.
@@ -71,8 +71,8 @@ En la imagen podemos ver varios tipos de declaraciones:
 - %right NOMBRE: Es lo mismo que left, con la única diferencia que agrupa los operadores con la misma prioridad de derecha a izquierda.
 
 ### Grámatica - Parte de las operaciones
-![Parte principal de la grámatica](Imagenes\Gramatica1.png)
-![Parte principal de la grámatica](Imagenes\Gramatica2.png)
+![Parte principal de la grámatica](Imagenes/Gramatica1.png)
+![Parte principal de la grámatica](Imagenes/Gramatica2.png)
 
 En la imágen podemos observar la grámatica de nuestro analizador sintactico. La grámatica la podemos dividir en 2 tipos de términos:
 1. No Terminales: Permiten seguir derivando en otras reglas. Los no términales definidos para esta gramática son:
@@ -84,7 +84,7 @@ En la imágen podemos observar la grámatica de nuestro analizador sintactico. L
 Existen otro terminales y no terminales que serán descritos más adelante ya que su propósito es más enfocado al correcto funcionamiento de la calculadora y no a las operaciones que esta puede realizar.
 
 ### Manejo de errores sintácticos
-![Manejo de errores sintácticos](Imagenes\ErroresSintacticos.png)
+![Manejo de errores sintácticos](Imagenes/ErroresSintacticos.png)
 
 En esta parte declaramos los errores sintácticos más básicos que se pueden tener. Si la calculadora detecta que hay 2 o más símbolos de operación seguidos entonces imprime un mensaje de error. Hay una excepción a este caso, y esto es con el símbolo *"-"* debido a que este puede estar después de cualquier otro simbolo de operacion ya que puede ser parte de un número negativo.
 
@@ -92,18 +92,18 @@ En esta parte declaramos los errores sintácticos más básicos que se pueden te
 En esta parte declaramos los errores semánticos más básicos que se pueden tener:
 1. División sobre 0.
 
-![Manejo de errores semánticos](Imagenes\ErroresSemanticos1.png)
+![Manejo de errores semánticos](Imagenes/ErroresSemanticos1.png)
 
 2. Logaritmo de un número negativo
 
-![Manejo de errores semánticos](Imagenes\ErroresSemanticos3.png)
+![Manejo de errores semánticos](Imagenes/ErroresSemanticos3.png)
 
 3. Raíz de un número negativo
 
-![Manejo de errores semánticos](Imagenes\ErroresSemanticos2.png)
+![Manejo de errores semánticos](Imagenes/ErroresSemanticos2.png)
 
 ### Reglas de información
-![Manejo de errores sintácticos](Imagenes\InformacionCalculadora.png)
+![Manejo de errores sintácticos](Imagenes/InformacionCalculadora.png)
 
 Se crearon un par de reglas para que el usuario pueda obtener ayuda/información acerca de las operaciones que se pueden realizar dentro de la calculadora.
 
